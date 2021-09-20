@@ -1,6 +1,6 @@
 defmodule Cashmere do
   @moduledoc """
-  This module provides the API to work with Cashmere, a high performance
+  This module provides the interface to work with Cashmere, a high performance
   in-memory caching solution.
 
   To get started with Cashmere, you need to create a module that calls
