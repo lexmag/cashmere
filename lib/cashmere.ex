@@ -11,7 +11,7 @@ defmodule Cashmere do
       end
 
   This way, `MyApp.Cache` becomes a Cashmere cache with four partitions. It
-  comes with a `child_spec/1` function that returns child specification
+  comes with the `child_spec/1` function that returns child specification
   necessary for starting supervisors and underlying parts to provide caching
   functionality, and many other functions to work with the cache as documented
   in this module.
@@ -31,7 +31,7 @@ defmodule Cashmere do
   There are a few configuration values available for `use Cashmere`:
 
   * `purge_interval` — (required) the interval in milliseconds when expired items
-    in the cache is purged. Note that intervals are not exact, but _at least_ as
+    in the cache are purged. Note that intervals are not exact, but _at least_ as
     long as the interval is passed.
   * `partitions` — the amount of paritions of this cache. Defaults to `1`.
 
