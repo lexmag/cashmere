@@ -12,9 +12,9 @@ defmodule Cashmere do
 
   This way, `MyApp.Cache` becomes a Cashmere cache with four partitions. It
   comes with the `child_spec/1` function that returns child specification
-  necessary for starting supervisors and underlying parts to provide caching
-  functionality, and many other functions to work with the cache as documented
-  in this module.
+  that allows us to start `MyApp.Cache` directly under a supervision tree,
+  and many other functions to work with the cache as documented in this
+  module.
 
   Usually you won't call `child_spec/1` directly but just add the cache to the
   application supervision tree.
@@ -95,7 +95,7 @@ defmodule Cashmere do
   @callback put(key(), value(), expiration()) :: :ok
 
   @doc """
-  Retrieves the value stored under `key`, invokes `value_fetcher` _serialiably_ if
+  Retrieves the value stored under `key`, invokes `value_fetcher` _serializably_ if
   not found, and puts the returned value in the cache under `key`, with the given
   `expiration` (in milliseconds or `:infinity`).
 
@@ -136,9 +136,9 @@ defmodule Cashmere do
             when result: value(), reason: any()
 
   @doc """
-  Retrieves the value stored under `key`, invokes `value_fetcher` _serialiably_ if
-  not found, and puts the returned value in the cache under `key`, with the given
-  `expiration` (in milliseconds or `:infinity`).
+  Retrieves the value stored under `key`, invokes `value_fetcher` if not found, and
+  puts the returned value in the cache under `key`, with the given `expiration` (in
+  milliseconds or `:infinity`).
 
   Note that since `value_fetcher` will always be invoked in case of a cache miss, it
   is subjected to cascading failures under very high load. Use `read/3` if you need
