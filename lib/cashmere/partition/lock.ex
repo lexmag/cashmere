@@ -1,7 +1,11 @@
 defmodule Cashmere.Partition.Lock do
+  @moduledoc false
+
   use GenServer
 
   defmodule Replier do
+    @moduledoc false
+
     use GenServer
 
     def start_link(callers) do

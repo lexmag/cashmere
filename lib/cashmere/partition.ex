@@ -1,4 +1,6 @@
 defmodule Cashmere.Partition do
+  @moduledoc false
+
   use GenServer
 
   alias __MODULE__.Lock
