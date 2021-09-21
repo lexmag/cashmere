@@ -46,7 +46,7 @@ defmodule Cashmere do
   @type expiration() :: pos_integer() | :infinity
 
   @doc """
-  Returns the child specification for the cache.
+  Returns a specification to start the cache under a supervisor.
 
   See the "Child specification" section in the `Supervisor` module for more detailed information.
   """
