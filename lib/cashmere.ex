@@ -48,19 +48,7 @@ defmodule Cashmere do
   @doc """
   Returns the child specification for the cache.
 
-  This is usually used to supervise the cache under the supervision tree of your application:
-
-  ### Example
-
-      def start(_type, _args) do
-        children = [
-          MyApp.Cache,
-          # ...
-        ]
-
-        Supervisor.start_link(children, strategy: :one_for_one)
-      end
-
+  See the "Child specification" section in the `Supervisor` module for more detailed information.
   """
   @callback child_spec(options :: Keyword.t()) :: Supervisor.child_spec()
 
