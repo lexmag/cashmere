@@ -66,8 +66,7 @@ defmodule Cashmere do
   @callback get(key()) :: {:ok, value()} | :error
 
   @doc """
-  Puts the `value` under `key` in the cache, with the given `expiration` (in milliseconds
-  or `:infinity`).
+  Puts the given `value` under `key` in the cache, with the specified `expiration`.
 
   To put a value that never expires, use `:infinity` for `expiration`.
 
@@ -84,8 +83,8 @@ defmodule Cashmere do
 
   @doc """
   Retrieves the value stored under `key`, invokes `value_fetcher` _serializably_ if
-  not found, and puts the returned value in the cache under `key`, with the given
-  `expiration` (in milliseconds or `:infinity`).
+  not found, and puts the returned value in the cache under `key`, with the specified
+  `expiration`.
 
   "Serializably" means that there will be _only one_ invocation of `value_fetcher` at
   a point in time, amongst many concurrent `read/3` calls with the same `key`, in the
@@ -117,7 +116,7 @@ defmodule Cashmere do
               expiration(),
               value_fetcher :: (() -> {:ok, result} | {:error, reason})
             ) ::
-              {:ok, result}
+              {:ok, value() | result}
               | {:error, reason}
               | {:error, {:cache, :callback_failure}}
               | {:error, {:cache, :retry_failure}}
@@ -125,8 +124,7 @@ defmodule Cashmere do
 
   @doc """
   Retrieves the value stored under `key`, invokes `value_fetcher` if not found, and
-  puts the returned value in the cache under `key`, with the given `expiration` (in
-  milliseconds or `:infinity`).
+  puts the returned value in the cache under `key`, with the specified `expiration`.
 
   Note that, since `value_fetcher` will always be invoked in case of a cache miss,
   this function is subjected to cascading failures under very high load.
