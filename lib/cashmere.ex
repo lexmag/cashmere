@@ -128,9 +128,9 @@ defmodule Cashmere do
   puts the returned value in the cache under `key`, with the given `expiration` (in
   milliseconds or `:infinity`).
 
-  Note that since `value_fetcher` will always be invoked in case of a cache miss, it
-  is subjected to cascading failures under very high load. Use `read/3` if you need
-  serializable invocation.
+  Note that, since `value_fetcher` will always be invoked in case of a cache miss,
+  this function is subjected to cascading failures under very high load.
+  Use `read/3` if you need serializable invocation.
 
   ## Examples
 
