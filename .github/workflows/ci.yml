@@ -33,7 +33,7 @@ jobs:
     strategy:
       matrix:
         versions:
-          - otp: 18.3
+          - otp: 19.3
             elixir: 1.6
           - otp: 24
             elixir: 1.12
