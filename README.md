@@ -1,23 +1,20 @@
 # Cashmere
 
-**TODO: Add description**
+Cashmere is a high performance in-memory caching solution.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `cashmere` to your list of dependencies in `mix.exs`:
+Add Ccashmere as a dependency to your `mix.exs` file:
 
 ```elixir
 def deps do
   [
-    {:cashmere, "~> 0.1.0"}
+    {:cashmere, "~> 0.1"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/cashmere](https://hexdocs.pm/cashmere).
+Then, run `mix deps.get` in your shell to fetch the dependencies.
 
 ## License
 
