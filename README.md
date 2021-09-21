@@ -7,10 +7,10 @@ Cashmere is a high performance in-memory caching solution.
 
 ## Installation
 
-Add Ccashmere as a dependency to your `mix.exs` file:
+Add Cashmere as a dependency to your `mix.exs` file:
 
 ```elixir
-def deps do
+def deps() do
   [
     {:cashmere, "~> 0.1"}
   ]
