@@ -71,7 +71,7 @@ defmodule Cashmere do
 
   To put a value that never expires, use `:infinity` for `expiration`.
 
-  Note that items in the cache are purged periodically by the configured `purge_interval`,
+  Note that entries in the cache are purged periodically with the configured `purge_interval`,
   it's possible for the value to exist for a short while after the given expiration time.
 
   ### Example
