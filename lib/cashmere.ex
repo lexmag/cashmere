@@ -74,7 +74,7 @@ defmodule Cashmere do
   Note that entries in the cache are purged periodically with the configured `purge_interval`,
   it's possible for the value to exist for a short while after the given expiration time.
 
-  ### Example
+  ## Examples
 
       iex> MyApp.Cache.put(:name, "cashmere", _30_seconds = 30_000)
       :ok
