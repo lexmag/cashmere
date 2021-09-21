@@ -132,7 +132,7 @@ defmodule Cashmere do
   is subjected to cascading failures under very high load. Use `read/3` if you need
   serializable invocation.
 
-  ### Example
+  ## Examples
 
       iex> MyApp.Cache.dirty_read(:name, 30_000, fn ->
       ...>   very_heavy_computation()
