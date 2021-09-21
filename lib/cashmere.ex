@@ -55,7 +55,7 @@ defmodule Cashmere do
   @doc """
   Retrieves the value by a specific `key` from the cache.
 
-  ### Example
+  ## Examples
 
       iex> MyApp.Cache.get(:name)
       {:ok, "cashmere"}
