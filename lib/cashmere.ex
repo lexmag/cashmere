@@ -53,7 +53,7 @@ defmodule Cashmere do
   @callback child_spec(options :: Keyword.t()) :: Supervisor.child_spec()
 
   @doc """
-  Retrieves the value by the key from the cache.
+  Retrieves the value by a specific `key` from the cache.
 
   ### Example
 
