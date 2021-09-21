@@ -87,14 +87,14 @@ defmodule Cashmere do
   `expiration`.
 
   "Serializably" means that there will be _only one_ invocation of `value_fetcher` at
-  a point in time, amongst many concurrent `read/3` calls with the same `key`, in the
+  a point in time, amongst many concurrent `c:read/3` calls with the same `key`, in the
   current runtime instance. This can be used as a possible mitigation for
   [cache stampedes](https://en.wikipedia.org/wiki/Cache_stampede) under very high load,
   to help avoiding cascading failures under very high load when massive cache misses
   happen for hot keys.
 
   Note that this function is subjected to some minor performance overhead. Most of the
-  time when it is not necessary, consider using `dirty_read/3`.
+  time when it is not necessary, consider using `c:dirty_read/3`.
 
   There are several possible errors:
 
@@ -128,7 +128,7 @@ defmodule Cashmere do
 
   Note that, since `value_fetcher` will always be invoked in case of a cache miss,
   this function is subjected to cascading failures under very high load.
-  Use `read/3` if you need serializable invocation.
+  Use `c:read/3` if you need serializable invocation.
 
   ## Examples
 
