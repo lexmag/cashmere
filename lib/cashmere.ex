@@ -104,7 +104,7 @@ defmodule Cashmere do
     could not be retrieved.
   * `reason` — the invocation of `value_fetcher` returned an error with `reason`.
 
-  ### Example
+  ## Examples
 
       iex> MyApp.Cache.read(:name, 30_000, fn ->
       ...>   very_heavy_computation()
