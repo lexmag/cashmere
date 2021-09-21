@@ -42,7 +42,7 @@ defmodule Cashmere do
   @type key() :: any()
   @type value() :: any()
 
-  @typedoc "Expiration time (in milliseconds or inifnity)."
+  @typedoc "Expiration time (in milliseconds or `:infinity`)."
   @type expiration() :: pos_integer() | :infinity
 
   @doc """
