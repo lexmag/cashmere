@@ -1,5 +1,8 @@
 # Cashmere
 
+[![CI Status](https://github.com/lexmag/cashmere/workflows/CI/badge.svg)](https://github.com/lexmag/cashmere/actions/workflows/ci.yml)
+[![Hex Version](https://img.shields.io/hexpm/v/cashmere.svg)](https://hex.pm/packages/cashmere)
+
 Cashmere is a high performance in-memory caching solution.
 
 ## Installation
