@@ -13,7 +13,6 @@ jobs:
     with:
       otp-version: "25"
       elixir-version: "1.15"
-      warnings-as-errors: false
 
   test:
     name: Test suite
@@ -23,7 +22,7 @@ jobs:
       matrix:
         versions:
           - otp: "20"
-            elixir: "1.6"
+            elixir: "1.9"
           - otp: "26"
             elixir: "1.15"
 

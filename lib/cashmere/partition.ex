@@ -54,9 +54,8 @@ defmodule Cashmere.Partition do
           error
       catch
         kind, reason ->
-          stacktrace = System.stacktrace()
           Lock.release(partition, key, {:error, {:cache, :callback_failure}})
-          :erlang.raise(kind, reason, stacktrace)
+          :erlang.raise(kind, reason, __STACKTRACE__)
       end
     end
   end
