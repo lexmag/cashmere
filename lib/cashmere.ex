@@ -114,7 +114,7 @@ defmodule Cashmere do
   @callback read(
               key(),
               expiration(),
-              value_fetcher :: (() -> {:ok, result} | {:error, reason})
+              value_fetcher :: (-> {:ok, result} | {:error, reason})
             ) ::
               {:ok, value() | result}
               | {:error, reason}
@@ -141,7 +141,7 @@ defmodule Cashmere do
   @callback dirty_read(
               key(),
               expiration(),
-              value_fetcher :: (() -> {:ok, result} | {:error, reason})
+              value_fetcher :: (-> {:ok, result} | {:error, reason})
             ) :: {:ok, result} | {:error, reason}
             when result: value(), reason: any()
 
