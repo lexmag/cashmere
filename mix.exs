@@ -22,11 +22,7 @@ defmodule Cashmere.MixProject do
     ]
   end
 
-  def application() do
-    [
-      extra_applications: [:logger]
-    ]
-  end
+  def application(), do: []
 
   defp description() do
     "High performance in-memory caching solution."
